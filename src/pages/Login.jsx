@@ -1,6 +1,9 @@
 import { useState } from "react";
+import axios from "axios";
+import {useNavigate} from "react-router";
 
-export default function Login() {
+export default function Login( {setFormSubmit}) {
+   const nav = useNavigate();
    const [formType, setFormType] = useState("login")
 
 
@@ -8,12 +11,23 @@ export default function Login() {
       setFormType(type);
    }
 
+   async function handleSubmit(e){
+      e.preventDefault();
+      try {
+         let res = await axios.post("http://localhost:3000/api/users");
+         setFormSubmit(true);
+         nav("/")
+      } catch (error) {
+         console.error(error.message);
+      }
+   }
+
    return (
       <>
          <button onClick={() => handleForm("login")}>Log In</button>
          <button onClick={() => handleForm("signup")}>Sign Up</button>
 
-         <form>
+         <form onSubmit={handleSubmit}>
             {formType == "signup" && (
                <input type="text" placeholder="Full Name..." />
             )}

@@ -6,8 +6,10 @@ import Profile from "./pages/Profile.jsx";
 import Nav from "./components/Nav.jsx";
 import './App.css';
 import { Route, Routes } from "react-router-dom";
+import {useState} from "react";
 
 function App() {
+  const [formSubmit, setFormSubmit] = useState(false);
 
   return (
     <div className="App">
@@ -17,7 +19,12 @@ function App() {
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/help" element={<Help />}/>
         <Route path="/profile" element={<Profile/>}/>
-        <Route path="/login" element={<Login/>}/>
+        {formSubmit === true ? (
+          <Route path="/profile" element={<Profile/>}/>
+        ) : (
+          <Route path="/login" element={<Login setFormSubmit={setFormSubmit}/>}/>
+        )} 
+        
       </Routes>
     </div>
   )
