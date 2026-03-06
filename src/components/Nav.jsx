@@ -12,8 +12,8 @@ export default function Nav(){
          <Link to="/help">
             <div>Help</div>
          </Link>
-         <Link to="/profile">
-            <div>Profile</div>
+         <Link to="/login">
+            <div>Login</div>
          </Link>
       </div>
    );
