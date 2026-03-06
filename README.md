@@ -3,7 +3,8 @@ A real-time MTA train navigation app that uses the user location to show them th
 
 ## Pages
 - Profile
-   - Displays info about user and allows theme toggle
+   - Displays user's info and allows theme toggle
+   - Allows user to edit their info as the please
 - Login/Sign Up
    - Allows users to log into their accounts in order to access their saved favorites 
 - Help
