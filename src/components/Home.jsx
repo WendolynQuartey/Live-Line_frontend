@@ -3,7 +3,7 @@ import axios from "axios";
 import background from "../images/1921.jpg";
 import TimeCard from "./TimeCard.jsx";
 
-export default function Home(){
+export default function Home({user}){
    const [stations, setStation] = useState([]);
    const [loading, setLoading] = useState(true);
 
@@ -31,7 +31,7 @@ export default function Home(){
          {loading && <p>Finding nearby stations...</p>}
          <div id="stationsList">
             {stations.map(station => (
-               <TimeCard key={station.id} station={station}/>
+               <TimeCard key={station.id} user={user} station={station}/>
             ))}
          </div>
       </>

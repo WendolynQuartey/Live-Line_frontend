@@ -1,4 +1,6 @@
-export default function TimeCard({station}){
+import axios from "axios";
+
+export default function TimeCard({station, user}){
    function formatTime(isoString){
       const diff = new Date(isoString) - new Date();
       const minutes = Math.floor(diff / 60000);

@@ -31,12 +31,14 @@ export default function Login( { setFormSubmit, setCurrentUser}) {
                email: userData.email,
                password: userData.password
             });
+            console.log("Login response:", res.data); // add this
             setCurrentUser(res.data.user);
          } else {
             const res = await axios.post("http://localhost:3000/api/users/signup", userData);
+            console.log("Signup response:", res.data); // add this
             setCurrentUser(res.data.user);
          }
-         nav("/");
+         nav("/profile");
          setFormSubmit(true);
       } catch (error) {
          console.error(error.message);
