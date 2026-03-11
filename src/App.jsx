@@ -17,7 +17,7 @@ function App() {
       <Nav formSubmit={formSubmit}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/favorites" element={<Favorites/>} />
+        <Route path="/favorites" element={<Favorites user={currentUser}/>} />
         <Route path="/help" element={<Help />}/>
         <Route path="/login" element={<Login setFormSubmit={setFormSubmit} setCurrentUser={setCurrentUser}/>}/>
         <Route path="/profile" element={formSubmit ? <Profile user={currentUser}/> :  <Login setFormSubmit={setFormSubmit}  setCurrentUser={setCurrentUser}/>} />

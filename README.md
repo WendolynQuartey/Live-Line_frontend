@@ -17,4 +17,3 @@ A real-time MTA train navigation app that uses the user location to show them th
 ## Resources
 - MTAPI
 - Freepik
-- 
