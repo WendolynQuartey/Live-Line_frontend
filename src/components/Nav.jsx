@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-export default function Nav(){
+export default function Nav({ formSubmit }){
    return (
       <div className="Nav">
          <Link to="/">
@@ -12,9 +12,15 @@ export default function Nav(){
          <Link to="/help">
             <div>Help</div>
          </Link>
-         <Link to="/login">
+         {formSubmit ? (
+            <Link to="/profile">
+            <div>Profile</div>
+         </Link>
+         ): (
+            <Link to="/login">
             <div>Login</div>
          </Link>
+         )}
       </div>
    );
 }

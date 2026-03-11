@@ -10,8 +10,8 @@ export default function Login( {setFormSubmit}) {
       email: "",
       password: "",
       location: {
-         longitude: 43.000000,
-         latitude:  -75.000000,
+         latitude: 43.000000,
+         longitude:  -75.000000,
       }
    });
 
@@ -27,12 +27,12 @@ export default function Login( {setFormSubmit}) {
       e.preventDefault();
       try {
          if (formType == "login"){
-            let res = await axios.post("http://localhost:3000/api/users", {
+            await axios.get("http://localhost:3000/api/users", {
                email: userData.email,
                password: userData.password
             });
          } else {
-            let res = await axios.post("http://localhost:3000/api/users", userData);
+            await axios.post("http://localhost:3000/api/users", userData);
          }
          setFormSubmit(true);
          nav("/");
@@ -48,7 +48,7 @@ export default function Login( {setFormSubmit}) {
          <button onClick={() => handleForm("signup")}>Sign Up</button>
 
          <form onSubmit={handleSubmit}>
-            {formType == "signup" && (
+            {formType === "signup" && (
                <input 
                type="text" 
                name="name" 
@@ -74,7 +74,7 @@ export default function Login( {setFormSubmit}) {
             onChange={handleChange}
             required
             />
-            {formType == "signup" && (
+            {formType === "signup" && (
                <input 
                type="password" 
                name="confirmPassword" 
@@ -87,7 +87,7 @@ export default function Login( {setFormSubmit}) {
                   }
                }}
                required
-               />
+              />
             )}
 
             <input 

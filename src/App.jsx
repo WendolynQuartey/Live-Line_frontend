@@ -18,12 +18,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/help" element={<Help />}/>
-        <Route path="/profile" element={<Profile/>}/>
-        {formSubmit === true ? (
-          <Route path="/profile" element={<Profile/>}/>
-        ) : (
-          <Route path="/login" element={<Login setFormSubmit={setFormSubmit}/>}/>
-        )} 
+        <Route path="/login" element={<Login setFormSubmit={setFormSubmit}/>}/>
+        <Route path="/profile" element={formSubmit ? <Profile/> :  <Login setFormSubmit={setFormSubmit}/>} />
       </Routes>
     </div>
   )

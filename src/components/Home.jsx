@@ -20,11 +20,7 @@ export default function Home(){
             } finally {
                setLoading(false);
             }
-         }, 
-            (error) => {
-               setLoading(false);
-            }
-
+         }
       )
    }, [])
 
@@ -32,7 +28,7 @@ export default function Home(){
       <>
          <img  id="background" src={background} alt="Metro Train Interior" />
          <h1 id="header">Live-Line</h1>
-         {loading && <p>Finding nearby stations..</p>}
+         {loading && <p>Finding nearby stations...</p>}
          <div id="stationsList">
             {stations.map(station => (
                <TimeCard key={station.id} station={station}/>
