@@ -24,7 +24,6 @@ function App() {
         ) : (
           <Route path="/login" element={<Login setFormSubmit={setFormSubmit}/>}/>
         )} 
-        
       </Routes>
     </div>
   )

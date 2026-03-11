@@ -26,11 +26,19 @@ export default function Login( {setFormSubmit}) {
    async function handleSubmit(e){
       e.preventDefault();
       try {
-         let res = await axios.post("http://localhost:3000/api/users", userData,);
+         if (formType == "login"){
+            let res = await axios.post("http://localhost:3000/api/users", {
+               email: userData.email,
+               password: userData.password
+            });
+         } else {
+            let res = await axios.post("http://localhost:3000/api/users", userData);
+         }
          setFormSubmit(true);
          nav("/");
       } catch (error) {
          console.error(error.message);
+         alert("Authentication failed!");
       }
    }
 
@@ -43,6 +51,7 @@ export default function Login( {setFormSubmit}) {
             {formType == "signup" && (
                <input 
                type="text" 
+               name="name" 
                placeholder="Full Name..." 
                value={userData.name}
                onChange={handleChange}
@@ -51,6 +60,7 @@ export default function Login( {setFormSubmit}) {
             )}
             <input 
             type="email" 
+            name="email" 
             placeholder="Email..." 
             value={userData.email}
             onChange={handleChange}
@@ -58,6 +68,7 @@ export default function Login( {setFormSubmit}) {
             />
             <input 
             type="password" 
+            name="password" 
             placeholder="Password..." 
             value={userData.password}
             onChange={handleChange}
@@ -66,6 +77,7 @@ export default function Login( {setFormSubmit}) {
             {formType == "signup" && (
                <input 
                type="password" 
+               name="confirmPassword" 
                placeholder="Confirm Password..." 
                onChange={(e) => {
                   if (e.target.value !== userData.password){
