@@ -35,8 +35,8 @@ export default function Help() {
    ];
    return (
       <>
-         <h1>Help</h1>
-            <h3>FAQs</h3>
+         <h1 style={{textAlign: "center"}}>Help</h1>
+            <h2>FAQs</h2>
             <div id="faqs">
                {faqs.map((faq, i) => (
                   <div key={i} className="faq">

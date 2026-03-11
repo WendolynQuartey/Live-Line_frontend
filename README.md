@@ -1,5 +1,5 @@
 # Live-Line FrontEnd
-A real-time MTA train navigation app that uses the user location to show them the closest train stations and the times each train arrives at said station.
+A real-time MTA train navigation app that uses the user's location to display the closest train stations and the times each train arrives at said station.
 
 ## Pages
 - Profile
@@ -11,9 +11,10 @@ A real-time MTA train navigation app that uses the user location to show them th
    - FAQs to help users navigate the app
    - Created using Claude Sonnet 4.6
 - Favorites
-   - Displays all user's saved locations and pinned train lines
+   - Displays all user's pinned train lines
 
 
 ## Resources
-- MTAPI
+- MTAPI proxy
 - Freepik
+- Coolors for color pallete

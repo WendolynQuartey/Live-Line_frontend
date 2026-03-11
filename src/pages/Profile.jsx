@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile({ user, setCurrentUser, setFormSubmit }) {
@@ -87,7 +88,7 @@ export default function Profile({ user, setCurrentUser, setFormSubmit }) {
                   required
                />
                <button type="submit">Save Changes</button>
-               <button onClick={() => setEdit(false)}>Cancel</button>
+               <button type="button" onClick={() => setEdit(false)}>Cancel</button>
             </form>
          )}
 

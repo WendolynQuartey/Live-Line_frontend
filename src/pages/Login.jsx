@@ -48,10 +48,10 @@ export default function Login( { setFormSubmit, setCurrentUser}) {
 
    return (
       <>
-         <button onClick={() => handleForm("login")}>Log In</button>
-         <button onClick={() => handleForm("signup")}>Sign Up</button>
+         <button className="form" onClick={() => handleForm("login")}>Log In</button>
+         <button className="form" onClick={() => handleForm("signup")}>Sign Up</button>
 
-         <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit} className="form">
             {formType === "signup" && (
                <input 
                type="text" 
