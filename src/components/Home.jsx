@@ -13,7 +13,7 @@ export default function Home(){
             try {
                const {latitude, longitude} = postion.coords;
                const response = await axios.get(`http://localhost:3000/api/mta/closest-stations?lat=${latitude}&lon=${longitude}`);
-               setStation(data);
+               setStation(response.data);
             } catch (error) {
                console.error(error.message);
                alert("No stations near you!");
