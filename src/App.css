@@ -24,6 +24,37 @@ body, html {
 #stationsList {
   position: absolute;
   display: flex;
+  width: 100%;
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
+.Nav div{
+   width: 8%;
+   border-radius: 10px;
+   transition: background-color 2s, font-size 3s;
+}
+
+.Nav div:hover {
+  font-size: 25px;
+  background-color: #f05015;
+
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.trains {
+  display: flex;
+  flex-direction: row;
+}
+
+.direction {
+  margin-left: 5%;
+}
+
+
+
+

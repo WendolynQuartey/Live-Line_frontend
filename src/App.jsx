@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav formSubmit={formSubmit}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/favorites" element={<Favorites/>} />

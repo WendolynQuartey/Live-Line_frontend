@@ -8,11 +8,13 @@ A real-time MTA train navigation app that uses the user location to show them th
 - Login/Sign Up
    - Allows users to log into their accounts in order to access their saved favorites 
 - Help
-   - Displays info about the site and FAQs to help users navigate the app
+   - FAQs to help users navigate the app
+   - Created using Claude Sonnet 4.6
 - Favorites
    - Displays all user's saved locations and pinned train lines
 
 
 ## Resources
-- MTA Subway API
+- MTAPI
 - Freepik
+- 
