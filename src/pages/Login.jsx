@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
-export default function Login( {setFormSubmit}) {
+export default function Login( { setFormSubmit, setCurrentUser}) {
    const nav = useNavigate();
    const [formType, setFormType] = useState("login");
    const [userData, setUserData] = useState({
@@ -26,16 +26,18 @@ export default function Login( {setFormSubmit}) {
    async function handleSubmit(e){
       e.preventDefault();
       try {
-         if (formType == "login"){
-            await axios.get("http://localhost:3000/api/users", {
+         if (formType === "login"){
+            const res = await axios.post("http://localhost:3000/api/users/login", {
                email: userData.email,
                password: userData.password
             });
+            setCurrentUser(res.data.user);
          } else {
-            await axios.post("http://localhost:3000/api/users", userData);
+            const res = await axios.post("http://localhost:3000/api/users/signup", userData);
+            setCurrentUser(res.data.user);
          }
-         setFormSubmit(true);
          nav("/");
+         setFormSubmit(true);
       } catch (error) {
          console.error(error.message);
          alert("Authentication failed!");

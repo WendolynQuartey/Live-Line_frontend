@@ -10,6 +10,7 @@ import {useState} from "react";
 
 function App() {
   const [formSubmit, setFormSubmit] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
 
   return (
     <div className="App">
@@ -18,8 +19,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/help" element={<Help />}/>
-        <Route path="/login" element={<Login setFormSubmit={setFormSubmit}/>}/>
-        <Route path="/profile" element={formSubmit ? <Profile/> :  <Login setFormSubmit={setFormSubmit}/>} />
+        <Route path="/login" element={<Login setFormSubmit={setFormSubmit} setCurrentUser={setCurrentUser}/>}/>
+        <Route path="/profile" element={formSubmit ? <Profile user={currentUser}/> :  <Login setFormSubmit={setFormSubmit}  setCurrentUser={setCurrentUser}/>} />
       </Routes>
     </div>
   )

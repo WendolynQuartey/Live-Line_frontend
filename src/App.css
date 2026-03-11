@@ -11,11 +11,19 @@ body, html {
 
 #background {
   width: 100%;
-  position: absolute;
+  height: 200px;
+  position: relative;
 }
 
 #header {
   position: relative;
   text-align: center;
-  color: #000;
+  color: #f4f0f0;
+}
+
+#stationsList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
